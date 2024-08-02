@@ -1,6 +1,6 @@
 {
   "**/*.{js,jsx,ts,tsx}": [
-    "eslint --max-warnings=0 --ignore-pattern '!.prettierrc.js'",
+    "eslint --max-warnings=0 --ignore-pattern '!.prettierrc.json'",
     "prettier -w"
   ],
   "**/*.{json,css,scss,md,webmanifest}": ["prettier -w"]
