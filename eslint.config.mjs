@@ -1,6 +1,5 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
@@ -24,12 +23,10 @@ export default [
     'eslint:recommended',
     'next',
     'next/core-web-vitals',
-    'plugin:@typescript-eslint/recommended',
     'prettier',
   ),
   {
     plugins: {
-      '@typescript-eslint': typescriptEslint,
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
     },
