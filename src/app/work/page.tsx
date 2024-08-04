@@ -5,7 +5,7 @@ import { TitlePage } from '@/components/title-page';
 export default function WorkPage() {
   return (
     <section>
-      <TitlePage title='work' />
+      <TitlePage title='my work' />
     </section>
   );
 }

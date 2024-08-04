@@ -56,6 +56,54 @@ export default function Home() {
         </Badge>
         .
       </p>
+      <div className='prose prose-neutral dark:prose-invert'>
+        <p>
+          I invest small angel checks into early stage startups building tools
+          for developers.
+        </p>
+      </div>
+      <div className='my-8 flex h-14 w-full flex-row space-x-2 overflow-x-auto'>
+        <a
+          href='https://linear.app'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <svg width='78' height='20' role='img' aria-label='Linear logo'>
+            <use href='/sprite.svg#linear' />
+          </svg>
+        </a>
+        <a
+          href='https://supabase.com'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <svg width='100' height='19' role='img' aria-label='Supabase logo'>
+            <use href='/sprite.svg#supabase' />
+          </svg>
+        </a>
+        <a
+          href='https://www.makeswift.com/blog/makeswift-is-joining-bigcommerce'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <svg width='96' height='19' role='img' aria-label='Makeswift logo'>
+            <use href='/sprite.svg#makeswift' />
+          </svg>
+        </a>
+        <a
+          href='https://resend.com'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <svg width='70' height='17' role='img' aria-label='Resend logo'>
+            <use href='/sprite.svg#resend' />
+          </svg>
+        </a>
+        <a
+          href='https://bun.sh'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <svg width='35' height='27' role='img' aria-label='Bun logo'>
+            <use href='/sprite.svg#bun' />
+          </svg>
+        </a>
+      </div>
     </section>
   );
 }

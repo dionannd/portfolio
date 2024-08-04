@@ -11,16 +11,16 @@ import cn from '@/lib/helper';
 import { Navbar } from '@/components/nav';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dianananda.vercel.app'),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
   title: {
     default: 'Dian Ananda',
     template: '%s | Dian Ananda',
   },
-  description: 'Developer from indonesian',
+  description: 'Developer from indonesian.',
   openGraph: {
     title: 'Dian Ananda',
-    description: 'Developer from indonesian',
-    url: 'https://dianananda.vercel.app',
+    description: 'Developer from indonesian.',
+    url: `${process.env.NEXT_PUBLIC_URL}`,
     siteName: 'Dian Ananda',
     locale: 'id-ID',
     type: 'website',
