@@ -15,6 +15,18 @@ const nextConfig = {
     },
   },
   transpilePackages: ['next-mdx-remote'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+    ],
+  },
   async redirects() {
     if (!process.env.POSTGRES_URL) {
       return [];

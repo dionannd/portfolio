@@ -5,7 +5,7 @@ import { SignIn, SignOut } from '@/components/guestbook/button';
 import Form from '@/components/guestbook/form';
 import { TitlePage } from '@/components/title-page';
 
-import auth from '@/app/auth';
+import { auth } from '@/app/auth';
 import { getGuestbookEntries } from '@/app/db/queries';
 
 export const metadata: Metadata = {

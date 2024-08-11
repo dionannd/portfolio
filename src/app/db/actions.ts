@@ -3,7 +3,7 @@
 import { revalidatePath, unstable_noStore as noStore } from 'next/cache';
 import { type Session } from 'next-auth';
 
-import auth from '@/app/auth';
+import { auth } from '@/app/auth';
 import { sql } from '@/app/db/postgres';
 
 export async function increment(slug: string) {
@@ -61,4 +61,24 @@ export async function saveGuestbookEntry(formData: FormData) {
   let response = await data.json();
   // eslint-disable-next-line no-console
   console.log('Email sent', response);
+}
+
+export async function deleteGuestbookEntries(selectedEntries: string[]) {
+  const session = await getSession();
+  const email = session.user?.email as string;
+
+  if (email !== 'dionananda77@gmail.com') {
+    throw new Error('Unauthorized');
+  }
+
+  const selectedEntriesAsNumber = selectedEntries.map(Number);
+  const arrayLiteral = `{${selectedEntriesAsNumber.join(',')}}`;
+
+  await sql`
+    DELETE FROM guestbook
+    WHERE id = ANY(${arrayLiteral}::int[])
+  `;
+
+  revalidatePath('/admin');
+  revalidatePath('/guestbook');
 }
