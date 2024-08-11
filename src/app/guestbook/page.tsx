@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { Suspense } from 'react';
+
+import cn from '@/lib/helper';
 
 import { SignIn, SignOut } from '@/components/guestbook/button';
 import Form from '@/components/guestbook/form';
@@ -48,8 +51,20 @@ async function GuestbookEntries() {
   return entries.map((entry) => (
     <div key={entry.id} className='flex flex-col space-y-1 mb-4'>
       <div className='w-full text-sm break-words'>
-        <span className='text-neutral-600 dark:text-neutral-400 mr-1'>
+        <span
+          className={cn('text-neutral-600 dark:text-neutral-400 mr-1', {
+            'inline-flex': entry.email === 'dionananda77@gmail.com',
+          })}
+        >
           {entry.created_by}
+          {entry.email === 'dionananda77@gmail.com' && (
+            <Image
+              src='/svg/verified.svg'
+              alt='Admin Verified Logo'
+              width={16}
+              height={16}
+            />
+          )}
         </span>
         {entry.body}
       </div>

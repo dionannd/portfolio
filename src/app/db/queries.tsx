@@ -41,7 +41,7 @@ export async function getGuestbookEntries() {
 
   noStore();
   return sql`
-    SELECT id, body, created_by, updated_at
+    SELECT id, email, body, created_by, updated_at
     FROM guestbook
     ORDER BY created_at DESC
     LIMIT 100

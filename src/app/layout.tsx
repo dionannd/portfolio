@@ -9,7 +9,6 @@ import '@/styles/globals.css';
 import cn from '@/lib/helper';
 
 import { Navbar } from '@/components/nav';
-import { Providers } from '@/components/providers';
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
@@ -56,11 +55,12 @@ export default function RootLayout({
         GeistSans.variable,
         GeistMono.variable,
       )}
+      suppressHydrationWarning
     >
       <body className='antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto'>
         <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
           <Navbar />
-          <Providers>{children}</Providers>
+          {children}
           <Analytics />
           <SpeedInsights />
         </main>
