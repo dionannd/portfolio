@@ -72,6 +72,30 @@ export default function Home() {
           </svg>
         </a>
         <a
+          href='https://nodejs.org'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <Image
+            alt='Nodejs logo'
+            src='/svg/nodejs.svg'
+            className='!mr-1'
+            width='32'
+            height='32'
+          />
+        </a>
+        <a
+          href='https://www.postgresql.org/'
+          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
+        >
+          <Image
+            alt='Postgresql logo'
+            src='/svg/postgresql.svg'
+            className='!mr-1'
+            width='32'
+            height='32'
+          />
+        </a>
+        <a
           href='https://supabase.com'
           className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
         >

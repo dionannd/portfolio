@@ -1,3 +1,5 @@
+'use server';
+
 import {
   // unstable_cache as cache,
   unstable_noStore as noStore,
