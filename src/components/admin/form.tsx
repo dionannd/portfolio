@@ -1,12 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DeleteButton } from '@/components/admin/button';
 
 import { deleteGuestbookEntries } from '@/app/db/actions';
 
-export default function Form({ entries }: { entries: any[] }) {
+import { IEntry } from '@/types/entry';
+
+export default function Form({ entries }: { entries: IEntry[] }) {
   const [selectedInputs, setSelectedInputs] = useState<string[]>([]);
   const [startShiftClickIndex, setStartShiftClickIndex] = useState<number>(0);
   const [isShiftKeyPressed, setIsShiftKeyPressed] = useState(false);
@@ -124,7 +126,13 @@ export default function Form({ entries }: { entries: any[] }) {
   );
 }
 
-function GuestbookEntry({ entry, children }: any) {
+function GuestbookEntry({
+  entry,
+  children,
+}: {
+  entry: IEntry;
+  children: React.ReactNode;
+}) {
   return (
     <div className='flex flex-col space-y-1 mb-4'>
       <div className='w-full text-sm break-words items-center flex'>

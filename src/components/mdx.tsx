@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import React from 'react';
@@ -36,8 +36,8 @@ function Table({
   );
 }
 
-function CustomLink(props: any) {
-  const href = props.href;
+function CustomLink(props: React.HTMLProps<HTMLAnchorElement>) {
+  const href = props.href as string;
 
   if (href.startsWith('/')) {
     return (
@@ -54,11 +54,12 @@ function CustomLink(props: any) {
   return <a target='_blank' rel='noopener noreferrer' {...props} />;
 }
 
-function RoundedImage(props: any) {
-  return <Image alt={props.alt} className='rounded-lg' {...props} />;
+function RoundedImage(props: ImageProps) {
+  // eslint-disable-next-line jsx-a11y/alt-text
+  return <Image className='rounded-lg' {...props} />;
 }
 
-function Callout(props: any) {
+function Callout(props: { emoji: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className='px-4 py-3 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8'>
       <div className='flex items-center w-4 mr-4'>{props.emoji}</div>
@@ -121,8 +122,8 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
   );
 }
 
-function Code({ children, ...props }: any) {
-  let codeHTML = highlight(children);
+function Code({ children, ...props }: React.HTMLProps<HTMLPreElement>) {
+  let codeHTML = highlight(children as string);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
@@ -138,7 +139,7 @@ function slugify(str: string) {
 }
 
 function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
-  return ({ children }: any) => {
+  return ({ children }: { children: string }) => {
     let slug = slugify(children);
     return React.createElement(
       `h${level}`,
