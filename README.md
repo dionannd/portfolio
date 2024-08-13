@@ -1,17 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dion's Portfolio
 
-## Getting Started
+[My Portfolio](https://dianananda.vercel.app/)
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
+- [Tailwindcss](https://tailwindcss.com/) - A utility-first CSS framework packed with classes.
+- [Auth.js](https://authjs.dev/) - Authentication for the Web. Free and open source.
+
+## Project structure
+
+```
+$PROJECT_ROOT
+│   # Static files for images
+├── public
+│   # All resource file for pages
+└── src
+    │   # Pages files App router
+    ├── app
+    │   # React component files
+    ├── components
+    │   # Content for blog (MDX)
+    ├── content
+    │   # Library / Helper files
+    ├── lib
+    │   # CSS files
+    ├── Styles
+    │   # Types file
+    └── types
+    
 ```
 
 ## Database Schema
@@ -38,3 +55,8 @@ CREATE TABLE views (
   count INT NOT NULL
 );
 ```
+
+## Repo Activity
+
+![Dion Portfolio](https://repobeats.axiom.co/api/embed/f113bd30fc59888248c5cc1b14ff50a1966ddb6b.svg "Repobeats analytics image")
+
