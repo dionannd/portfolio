@@ -13,7 +13,7 @@ import { getViewsCount } from '@/app/db/queries';
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: any;
 }): Promise<Metadata | undefined> {
   const post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
@@ -86,8 +86,10 @@ function formatDate(date: string) {
   }
 }
 
-export default function Blog({ params }: { params: { slug: string } }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+export default function Blog({ params }: { params: any }) {
+  const post = getBlogPosts().find(
+    (post) => post.slug === (params.slug as string),
+  );
 
   if (!post) {
     notFound();
@@ -127,7 +129,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
           </p>
         </Suspense>
         <Suspense>
-          <Views slug={params.slug} />
+          <Views slug={params.slug as string} />
         </Suspense>
       </div>
       <article className='prose prose-quoteless prose-neutral dark:prose-invert'>
