@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Badge } from '@/components/badge';
+import ButtonSendEvent from '@/components/ui/button';
 
 import { PreloadResources } from '@/app/preload';
 
@@ -83,35 +84,8 @@ export default function Home() {
             height='32'
           />
         </a>
-        <a
-          href='https://www.postgresql.org/'
-          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
-        >
-          <Image
-            alt='Postgresql logo'
-            src='/svg/postgresql.svg'
-            className='!mr-1'
-            width='32'
-            height='32'
-          />
-        </a>
-        <a
-          href='https://supabase.com'
-          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
-        >
-          <svg width='100' height='19' role='img' aria-label='Supabase logo'>
-            <use href='/sprite.svg#supabase' />
-          </svg>
-        </a>
-        <a
-          href='https://resend.com'
-          className='flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800'
-        >
-          <svg width='70' height='17' role='img' aria-label='Resend logo'>
-            <use href='/sprite.svg#resend' />
-          </svg>
-        </a>
       </div>
+      <ButtonSendEvent />
     </section>
   );
 }
