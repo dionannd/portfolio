@@ -63,7 +63,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <GoogleAnalytics gaId='G-TDZGFZ0P0X' />
-          <GoogleTagManager gtmId='G-TDZGFZ0P0X' />
+          <GoogleTagManager gtmId='GTM-KVTSTZ8S' />
           <Analytics />
           <SpeedInsights />
         </main>
