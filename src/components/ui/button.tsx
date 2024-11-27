@@ -5,16 +5,27 @@ import React from 'react';
 
 export default function ButtonSendEvent() {
   const handleEvent1 = React.useCallback(() => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'add_to_cart', {
-        event_category: 'ecommerce',
-        event_label: 'Product Name',
-        value: 100, // Example value or quantity
-      });
-      sendGAEvent('event', 'buttonClicked', { value: 'xyz' });
-    } else {
-      return;
-    }
+    sendGAEvent('event', 'add_to_cart', {
+      event_category: 'ecommerce',
+      event_label: 'Product Name',
+      value: 100, // Example value or quantity
+      items: [
+        {
+          item_name: 'Product Name', // Name of the product
+          price: 100, // Price
+          quantity: 1, // Quantity
+        },
+      ],
+      ecommerce: {
+        items: [
+          {
+            item_name: 'Product Name', // Name of the product
+            price: 100, // Price
+            quantity: 1, // Quantity
+          },
+        ],
+      },
+    });
   }, []);
 
   const handleEvent2 = React.useCallback(() => {
