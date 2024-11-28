@@ -28,25 +28,6 @@ export default function ButtonSendEvent() {
     });
   }, []);
 
-  const handleEvent2 = React.useCallback(() => {
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
-        event: 'add_to_cart',
-        ecommerce: {
-          items: [
-            {
-              item_name: 'Product Name', // Name of the product
-              price: 100, // Price
-              quantity: 1, // Quantity
-            },
-          ],
-        },
-      });
-    } else {
-      return;
-    }
-  }, []);
-
   return (
     <div className='flex gap-2'>
       <button
@@ -54,12 +35,6 @@ export default function ButtonSendEvent() {
         onClick={handleEvent1}
       >
         Send event 1
-      </button>
-      <button
-        className='border border-white p-1 rounded'
-        onClick={handleEvent2}
-      >
-        Send event 2
       </button>
     </div>
   );
